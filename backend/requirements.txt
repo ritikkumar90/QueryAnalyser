@@ -1,0 +1,10 @@
+fastapi
+pwdlib[argon2]
+sqlalchemy
+python-jose[cryptography]
+pymysql
+uvicorn
+sqlalchemy
+dotenv
+python-multipart
+
