@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Auth.css";
 
-export default function Auth({ onClose }) {
+export default function Auth({ onClose, onLoginSuccess }) {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,6 +43,12 @@ export default function Auth({ onClose }) {
 
       if (response.ok) {
         console.log("success: ", data);
+        if (isLogin && data.access_token) {
+          localStorage.setItem("token", data.access_token);
+          onLoginSuccess();
+        } else if (!isLogin) {
+          setIsLogin(true); // Switch to login view after successful signup
+        }
       } else {
         console.log("Error form  backend", data);
       }
