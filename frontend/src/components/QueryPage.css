@@ -1,0 +1,342 @@
+/* ===================================================
+   QueryPage Styles
+   Uses the same dark-theme + gradient accent system
+   as Auth.css / Navbar.css
+   =================================================== */
+
+.query-page {
+  padding: 3rem 2rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #e0e0e0;
+  animation: fadeUp 0.45s ease-out;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Header ---------- */
+.query-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.query-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #f3f4f6;
+  margin: 0 0 0.6rem;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.query-subtitle {
+  font-size: 1.05rem;
+  color: #9ca3af;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* ---------- Search bar ---------- */
+.query-form {
+  margin-bottom: 1.5rem;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 0.25rem 0.4rem 0.25rem 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-wrapper:focus-within {
+  border-color: #4facfe;
+  box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.18);
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.input-wrapper input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.85rem 0.75rem;
+  font-family: inherit;
+}
+
+.input-wrapper input::placeholder {
+  color: #6b7280;
+}
+
+.query-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: #000;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+.query-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(79, 172, 254, 0.45);
+}
+
+.query-submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* spinner */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(0, 0, 0, 0.25);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Example chips ---------- */
+.example-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.chip {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a0a0a0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.chip:hover {
+  background: rgba(79, 172, 254, 0.12);
+  border-color: rgba(79, 172, 254, 0.35);
+  color: #4facfe;
+  transform: translateY(-1px);
+}
+
+/* ---------- Error ---------- */
+.query-error {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.3s ease-out;
+}
+
+/* ---------- Results ---------- */
+.query-results {
+  animation: fadeUp 0.35s ease-out;
+}
+
+/* ---------- AI Answer card ---------- */
+.answer-card {
+  background: rgba(79, 172, 254, 0.06);
+  border: 1px solid rgba(79, 172, 254, 0.18);
+  border-left: 3px solid #4facfe;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.answer-card-header {
+  padding: 0.75rem 1.2rem;
+  border-bottom: 1px solid rgba(79, 172, 254, 0.12);
+}
+
+.answer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.answer-badge svg {
+  color: #4facfe;
+  flex-shrink: 0;
+}
+
+.answer-body {
+  padding: 1.2rem 1.4rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+.sql-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.sql-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sql-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.row-count {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.sql-code {
+  margin: 0;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.88rem;
+  color: #c084fc;
+  line-height: 1.6;
+  background: transparent;
+}
+
+/* ---------- Data table ---------- */
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.result-table th,
+.result-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.result-table thead {
+  background: rgba(79, 172, 254, 0.08);
+}
+
+.result-table th {
+  font-weight: 600;
+  color: #4facfe;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.result-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.2s;
+}
+
+.result-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.result-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.result-table td {
+  color: #d1d5db;
+}
+
+.no-rows {
+  text-align: center;
+  color: #6b7280;
+  padding: 2rem;
+  font-style: italic;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .query-page {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .query-title {
+    font-size: 2rem;
+  }
+
+  .query-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .example-chips {
+    gap: 0.4rem;
+  }
+
+  .chip {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

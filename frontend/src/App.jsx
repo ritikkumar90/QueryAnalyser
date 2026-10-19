@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import heroImg from "./assets/hero.png";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Auth from "./components/Auth";
+import QueryPage from "./components/QueryPage";
 
 function App() {
   const [showAuth, setShowAuth] = useState(false);
@@ -48,21 +46,10 @@ function App() {
   return (
     <>
       <Navbar onLoginClick={() => setShowAuth(true)} user={user} onLogout={handleLogout} />
-      
-      {!user ? (
-        <main className="landing-page">
-          <h1>Welcome to QueryAnalyser </h1>
-          {/* You can add your hero image or other landing page content here */}
-        </main>
-      ) : (
-        <main className="dashboard-page" style={{ padding: "4rem 2rem", textAlign: "center" }}>
-          <h1>Dashboard</h1>
-          <p>Welcome back, {user.Name}!</p>
-          <div style={{ marginTop: "2rem", padding: "2rem", border: "1px dashed #ccc", borderRadius: "8px" }}>
-            <p>Your content will go here.</p>
-          </div>
-        </main>
-      )}
+
+      <main>
+        <QueryPage />
+      </main>
 
       {showAuth && <Auth onClose={() => setShowAuth(false)} onLoginSuccess={handleLoginSuccess} />}
     </>

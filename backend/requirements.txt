@@ -4,7 +4,7 @@ sqlalchemy
 python-jose[cryptography]
 pymysql
 uvicorn
-sqlalchemy
-dotenv
+python-dotenv
 python-multipart
-
+pandas
+openai

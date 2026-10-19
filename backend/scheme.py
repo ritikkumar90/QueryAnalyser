@@ -9,3 +9,6 @@ class UserSignup(BaseModel):
     name: str
     email: str
     password: str
+
+class QueryRequest(BaseModel):
+    question: str

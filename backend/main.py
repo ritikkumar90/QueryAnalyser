@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import model
 from routes import auth
+from routes import query
 from database import engine
 
 
@@ -17,6 +18,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(auth.router)
+app.include_router(query.router)
 
 @app.get("/")
 def homePage():
